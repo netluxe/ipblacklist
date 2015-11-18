@@ -25,10 +25,9 @@
   </table>
 </div>
 
-  
+<% unless @data[:details][:result] %>
 <button class="btn btn-primary"
         data-toggle="collapse" data-target="#demo">More Info</button>
-
 
 <div id="demo" class="collapse">
   <br>
@@ -39,3 +38,4 @@
   Failure Message: <%= @data[:details]["errmessage"] %><br>
   Country: <%= @data[:details]["country"] %><br>
 </div>
+<% end %>
