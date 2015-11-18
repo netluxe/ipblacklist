@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>cPanel IP Blacklist Check</h1>
+</div>
+
+<br />
+<div class="row">
+  <%= form_for :ipaddress, url: search_path, remote: true do |f| %>
+  <div class="col-md-2">
+    <%= f.label :ipaddress, "IP Address" %>
+  </div>
+  <div class="col-md-5">
+    <%= f.text_field :ipaddress, :required => true,
+    :pattern => '[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}',
+    :placeholder => "192.168.1.1",
+    class: "form-control" %>
+  </div>
+  <div class="col-xs-3">
+    <%= f.submit "Search",  class: "btn btn-primary" %>
+  </div>
+  <% end %>
+</div>
+
+<% 1.upto(5) do |x| %>
+<br/>
+<% end %>
+
+<div class="row">
+  <div class="col-md-10">
+    <div class="info-box">
+    </div>
+  </div>
+</div>
