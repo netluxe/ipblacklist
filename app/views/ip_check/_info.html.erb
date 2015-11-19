@@ -15,7 +15,8 @@
       <% else %>
       <tr class="alert alert-danger">
         <td><%= @data[:ipaddress] %></td>
-        <td>Application: <b><%= @data[:details]["application"] %></b>
+        <td><b>Listed!</b>
+          <br>Application: <b><%= @data[:details]["application"] %></b>
           <br>Reason: <b><%= @data[:details]["errmessage"] %></b>
           <br>Blacklist Time: <b><%= @data[:details]["msgtimestamp"] %></b>
         </td>
@@ -28,7 +29,6 @@
 <% unless @data[:details][:result] %>
 <button class="btn btn-primary"
         data-toggle="collapse" data-target="#demo">More Info</button>
-
 <div id="demo" class="collapse">
   <br>
   IP: <%= @data[:ipaddress] %><br>
