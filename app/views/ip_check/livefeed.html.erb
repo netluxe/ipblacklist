@@ -1,0 +1,23 @@
+<h3>LiveFeed</h3>
+
+<div id="liveevent">
+</div>
+
+
+
+<script>
+var handle = document.getElementById("liveevent");
+setInterval(function(){
+    $.getJSON('/frag.json', function(data){
+        if(data.length != 0) {
+            var node = document.createElement("LI");
+            for (var i=0; i < data.length; i++){
+                var message = JSON.parse(data[i]).message;
+                var textnode = document.createTextNode(message);
+                node.appendChild(textnode);
+                handle.appendChild(node);
+            }
+        }
+    });
+}, 2000);
+</script>
